@@ -1,0 +1,33 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav rounded shadow-sm m-3" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Jesús Trujillo</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="show">Lista de usuarios</a>
+      <a mat-list-item routerLink="add">Añadir usuario</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="p-3">
+    <mat-toolbar class="bg-transparent">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Prueba técnica - Yo Contigo IT</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <div>
+      <div class="container">
+        <div class="card shadow-sm p-3 m-3">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

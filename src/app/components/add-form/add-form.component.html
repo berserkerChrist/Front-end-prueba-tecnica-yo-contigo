@@ -1,0 +1,45 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="form">
+    
+    <div class="container">
+        <h1>Añade un nuevo usuario</h1>
+        <div class="row">
+            <div class="col-sm-6">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Nombre</mat-label>
+                    <input matInput formControlName="name">
+                    <mat-error *ngIf="name?.errors?.['required']">Ingresa el nombre del usuario</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Edad</mat-label>
+                    <input type="number" matInput formControlName="age">
+                    <mat-error *ngIf="age?.errors?.['required']">Ingresa la edad</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Género</mat-label>
+                    <mat-select formControlName="gender">
+                        <mat-option value="Masculino">Masculino</mat-option>
+                        <mat-option value="Femenino">Femenino</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="gender?.errors?.['required']">Ingresa el género</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Correo electrónico</mat-label>
+                    <input matInput formControlName="email">
+                    <mat-error *ngIf="email?.errors?.['required']">Ingresa el correo electrónico</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+
+       <div class="row justify-content-center">
+            <button mat-raised-button color="primary" class="text-center py-2 w-50">Registrar</button>
+       </div>
+    </div>
+</form>
