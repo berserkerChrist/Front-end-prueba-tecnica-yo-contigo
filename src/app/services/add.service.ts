@@ -9,7 +9,7 @@ export class AddService {
   constructor(private http: HttpClient) { }
 
   addUser(payload: any){
-    return this.http.post('http://localhost:9000/api/new-user', payload);
+    return this.http.post('https://b213-187-201-133-233.ngrok-free.app/api/new-user', payload);
   }
 
 }

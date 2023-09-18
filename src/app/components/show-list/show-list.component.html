@@ -1,5 +1,5 @@
-<div>
-    <table class="table table-hover">
+<div class="table-responsive">
+    <table class="table table-hover table-bordered">
         <thead>
             <tr>
                 <th scope="col">ID</th>
@@ -27,7 +27,7 @@
 </div>
 
 <div class="mt-3" *ngIf="isVisible">
-    <form (ngSubmit)="editUser()" [formGroup]="editForm">
+    <form #editFormTemplate="ngForm" (ngSubmit)="editUser(); editFormTemplate.resetForm()" [formGroup]="editForm">
     
         <div class="container">
             <h1>Editar usuario</h1>
